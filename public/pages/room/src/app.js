@@ -16,7 +16,6 @@ const onload = () => {
 
   const socketUrl = "http://localhost:3000";
   const socketBuilder = new SocketBuilder({ socketUrl });
-  console.log("instance of socketbuilder", socketBuilder);
 
   const peerConfig = Object.values({
     id: undefined,

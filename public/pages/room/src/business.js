@@ -4,14 +4,14 @@ class Business {
     this.media = media;
     this.view = view;
 
-    this.peerBuilder = peerBuilder;
-    this.peers = new Map();
-
     this.socketBuilder = socketBuilder;
-    this.socket = {};
+    this.peerBuilder = peerBuilder;
 
+    this.socket = {};
     this.currentStream = {};
     this.currentPeer = {};
+
+    this.peers = new Map();
   }
 
   static initialize(deps) {
@@ -85,6 +85,7 @@ class Business {
       const callerId = call.peer;
       this.addVideoStream(callerId, stream);
       this.peers.set(callerId, { call });
+
       this.view.setParticipants(this.peers.size);
     };
   };
